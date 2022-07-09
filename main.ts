@@ -30,6 +30,7 @@ basic.forever(function () {
             pins.digitalWritePin(DigitalPin.P14, 1)
             basic.pause(100)
             pins.digitalWritePin(DigitalPin.P14, 0)
+            basic.pause(900)
         }
         basic.pause(59750 - Hours * 1000)
         Minutes = 0
