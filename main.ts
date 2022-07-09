@@ -26,6 +26,12 @@ basic.forever(function () {
         pins.digitalWritePin(DigitalPin.P13, 1)
         basic.pause(250)
         pins.digitalWritePin(DigitalPin.P13, 0)
+        if (Hours <= 11) {
+            Hours += 1
+        } else {
+            Hours = 1
+        }
+        Minutes = 0
         for (let index = 0; index < Hours; index++) {
             pins.digitalWritePin(DigitalPin.P14, 1)
             basic.pause(100)
@@ -33,11 +39,5 @@ basic.forever(function () {
             basic.pause(900)
         }
         basic.pause(59750 - Hours * 1000)
-        Minutes = 0
-        if (Hours <= 11) {
-            Hours += 1
-        } else {
-            Hours = 1
-        }
     }
 })
